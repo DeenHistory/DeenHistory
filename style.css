@@ -367,10 +367,10 @@ header {
 
 /* Mobile Menu Trigger - Base Setup */
 .menu-trigger {
-    display: none; /* 👈 Fixes Bug 1: Remains strictly hidden on desktop */
+    display: none;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    color: var(--text-primary); /* 👈 Fixes Bug 2: Inherits dynamic light/dark text color */
+    color: var(--text-primary);
     font-family: var(--font-family) !important;
     font-weight: 700;
     font-size: 0.85rem;
@@ -714,17 +714,26 @@ header {
         width: 100%;
     }
     .menu-trigger {
-        display: block; /* 👈 Only becomes visible on mobile devices */
-        margin-right: auto;
+        display: block;
+        margin-right: 0;
     }
     header {
         flex-direction: row;
+        flex-wrap: wrap; /* Allows components to gracefully fold without smashing together */
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 24px;
         padding-bottom: 14px;
+        gap: 16px;
     }
     .search-container {
-        max-width: 60%;
+        order: 3; /* Shifts the search bar directly to a clean row below the buttons */
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+    .header-actions {
+        order: 2;
     }
     .dashboard-grid {
         grid-template-columns: 1fr;
