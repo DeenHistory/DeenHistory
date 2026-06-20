@@ -669,6 +669,7 @@ header {
     cursor: pointer;
     padding: 4px 10px;
     border-radius: var(--radius-standard);
+    font-family: var(--font-family) !important; 
 }
 
 /* Search Results Summary */
