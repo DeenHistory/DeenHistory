@@ -661,16 +661,18 @@ header {
 }
 
 .menu-trigger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    padding: 4px 10px;
-    border-radius: var(--radius-standard);
-    font-family: var(--font-family) !important; 
-}
+        display: block;
+        margin-right: auto;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-card);
+        font-family: var(--font-family) !important; /* Forces your global typography stack */
+        font-weight: 700;                           /* Makes it match the bold brand elements */
+        font-size: 0.85rem;                         /* Keeps clean sizing uniform with other actions */
+        text-transform: uppercase;                  /* Gives it an archival structural look */
+        letter-spacing: 0.05em;                     /* Elegantly spreads out text characters */
+        padding: 10px 20px;                         /* Expands click target safely for touchscreens */
+        border-radius: var(--radius-pill);          /* Gives it a sleek pill design */
+    }
 
 /* Search Results Summary */
 .search-results-summary {
