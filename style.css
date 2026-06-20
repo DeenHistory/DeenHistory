@@ -365,6 +365,30 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
+/* Mobile Menu Trigger - Base Setup */
+.menu-trigger {
+    display: none; /* 👈 Fixes Bug 1: Remains strictly hidden on desktop */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary); /* 👈 Fixes Bug 2: Inherits dynamic light/dark text color */
+    font-family: var(--font-family) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.menu-trigger:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 /* Archive Panels */
 .archive-panel {
     display: none;
@@ -417,7 +441,7 @@ header {
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(17, 94, 89, 0.15);
-    margin-bottom: 24px; /* 👈 Configured to exactly match the 24px grid-gap matrix length */
+    margin-bottom: 24px;
 }
 
 [data-theme="dark"] .dashboard-hero-card {
@@ -660,20 +684,6 @@ header {
     margin-top: 20px;
 }
 
-.menu-trigger {
-        display: block;
-        margin-right: auto;
-        border: 1px solid var(--border-color);
-        background-color: var(--bg-card);
-        font-family: var(--font-family) !important; /* Forces your global typography stack */
-        font-weight: 700;                           /* Makes it match the bold brand elements */
-        font-size: 0.85rem;                         /* Keeps clean sizing uniform with other actions */
-        text-transform: uppercase;                  /* Gives it an archival structural look */
-        letter-spacing: 0.05em;                     /* Elegantly spreads out text characters */
-        padding: 10px 20px;                         /* Expands click target safely for touchscreens */
-        border-radius: var(--radius-pill);          /* Gives it a sleek pill design */
-    }
-
 /* Search Results Summary */
 .search-results-summary {
     font-size: 1.1rem;
@@ -704,10 +714,8 @@ header {
         width: 100%;
     }
     .menu-trigger {
-        display: block;
+        display: block; /* 👈 Only becomes visible on mobile devices */
         margin-right: auto;
-        border: 1px solid var(--border-color);
-        background-color: var(--bg-card);
     }
     header {
         flex-direction: row;
